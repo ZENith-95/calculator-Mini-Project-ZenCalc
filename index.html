@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZENcalc</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <div id="calculator">
+        <div id="screen">
+            <video id="video" autoplay loop muted>
+                <source src="./Assets/Digital HUD Futuristic Video Frame Digital Technology Scifi Frame Interface Lines Background, Backgrounds Motion Graphics ft. technology & frame (online-video-cutter.com).mp4" type="video/mp4">
+            </video>
+            <input readonly id="input-disp"> </input>
+            <input id="result-disp"> </input>
+        </div>
+        <div id="keys">
+             <button onclick="clearDisplay()">C</button>
+             <button onclick="clearInput()">Del</button>
+             <button onclick="addInput('/')">&divide;</button>
+             <button onclick="addInput('*')">&times;</button>
+
+             <button onclick="addInput('7')">7</button>
+             <button onclick="addInput('8')">8</button>
+             <button onclick="addInput('9')">9</button>
+             <button onclick="addInput('-')">-</button>
+
+             <button onclick="addInput('4')">4</button>
+             <button onclick="addInput('5')">5</button>
+             <button onclick="addInput('6')">6</button>
+             <button class="plus" onclick="addInput('+')">+</button>
+
+             <button onclick="addInput('1')">1</button>
+             <button onclick="addInput('2')">2</button>
+             <button onclick="addInput('3')">3</button>
+            
+             <button onclick="addInput('.')">.</button>
+              <button onclick="addInput('0')">0</button>
+              <button class="equal" onclick="calculate()">=</button>
+
+        </div>
+     </div>
+    
+
+    <script src="./script.js"></script>
+</body>
+</html>
