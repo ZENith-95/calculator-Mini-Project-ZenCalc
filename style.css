@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+/* :root{
+    /* --angle:  0deg; */
+
+
+
 @font-face {
     font-family: dig7;
     src: url(./Assets/digital-7.ttf);
@@ -20,16 +25,17 @@ body{
     padding-top: 2em ;
     height: 98vh;
     background: url(./Assets/backgroun.jpg);
+    z-index: -99;
+    position: sticky;
 }
 
 #calculator{
     width: 21em;
-    height: 100%;
+    min-height: 37rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 1.5rem;
     border: 2px solid black;
     border-radius: 1em;
     background-color: black;
@@ -56,32 +62,85 @@ body{
 #keys{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 2px;
+    gap: 6px;
+    margin: 1.5rem 0;
 }
 
 button{
-    height: 4rem;
-    width : 4rem;
+    color: rgb(71, 157, 231);
+    height: 3.9rem;
+    width : 3.9rem;
     border-radius: 1em;
     font-family: osiris;
     font-size: 1.3rem;
-    background-color: #9cc7ec;
+    background: linear-gradient(109.6deg, #242d39 11.2%, #10253c 51.2%, #000000 98.6%);
+    position: relative;
+    box-shadow: none;
+    user-select: none;
+}
+
+button:hover{
+    cursor: pointer;
+
+}
+
+@property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+button::after, button::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: conic-gradient(transparent, #0077ff);
+    top: 50%;
+    left: 50%;
+    z-index: -3;
+    translate: -50% -50%;
+    padding: 3px;
+    border-radius: 1em;
+}
+
+.button::before{
+    filter: blur(1.5rem);
+    padding: 2px;
+}
+
+button:hover::after{
+    background: conic-gradient(from var(--angle),black, #0077ff);
+    cursor: pointer;
+    animation: spin 2s ease infinite;
+}
+
+@keyframes spin{
+    0%{
+        --angle: 0deg;
+    }
+
+    100%{
+        --angle: 360deg;
+    }
 }
 
 .plus{
     grid-row: span 2;
     height: 100%;
+    background: radial-gradient(circle at 1.8% 4.8%, #11173a 0%, #3a5594 90%);
 }
 
 .equal{
     grid-column: span 2;
     height: 4rem;
     width: 100%;
+    background: linear-gradient(118.4deg, #b41938 27.5%, #3e091b 92.7%);
 }
 
 
 #input-disp , #result-disp{
-    color: aliceblue;
+    color: rgb(183, 219, 250);
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
@@ -91,6 +150,27 @@ button{
     font-size: 2em;
     padding: .2em;
     border: none;
-    background-color: rgba(240, 248, 255, 0.021);
-    /* display: none; */
+    background-color: #f0f8ff05;
+    overflow-x: hidden;
+
+}
+
+#result-disp{
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 85%;
+}
+
+#input-disp{
+      letter-spacing: .07rem;
+}
+
+.brand{
+    width: 6rem;
+    height: 4rem;
+}
+
+.brand img{
+    width: 100%;
 }
