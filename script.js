@@ -49,7 +49,8 @@ function calculate() {
     if (!isFinite(evaluatedValue)) {
       throw new Error("Result is not finite");
     }
-    resultElement.value = evaluatedValue;
+    inputElement.value = evaluatedValue;
+    resultElement.value = "";
   } catch (error) {
     resultElement.value = "Error"; // Display error for invalid expressions
   }
@@ -98,12 +99,9 @@ document.addEventListener("keydown", function (event) {
     calculate();
   } else if (key === "Backspace" || key === "Delete") {
     clearInput();
-  }
-
-
-   else if (key === "Escape" || key === "c" || key === 'C') {
+  } else if (key === "Escape" || key === "c" || key === "C") {
     clearDisplay();
-   }else if (key === '%'){
-    appendOperator('%')
-   }
+  } else if (key === "%") {
+    appendOperator("%");
+  }
 });

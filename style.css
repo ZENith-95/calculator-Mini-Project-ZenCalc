@@ -33,7 +33,7 @@ body{
 #calculator{
     width: 20em;
     min-height: 35rem;
-    max-height: 95vh;
+    max-height: 98vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -161,10 +161,13 @@ button:hover::after{
     justify-content: flex-end;
     align-items: flex-end;
     width: 85%;
+    transition: all 0.4s ease;
+    text-align: right;
 }
 
 #input-disp{
       letter-spacing: .07rem;
+      transition: all 0.4s ease ;
 }
 
 .brand{
