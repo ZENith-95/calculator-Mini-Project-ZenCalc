@@ -20,22 +20,24 @@
         <div id="keys">
              <button onclick="clearDisplay()">C</button>
              <button onclick="clearInput()">Del</button>
-             <button onclick="addInput('/')"><b>&divide;</b></button>
-             <button onclick="addInput('*')">&times;</button>
+            <button class="operator" onclick="appendOperator('/')">&divide;</button>
+             <button class="operator" onclick="appendOperator('*')">&times;</button>
 
-             <button onclick="addInput('7')">7</button>
-             <button onclick="addInput('8')">8</button>
-             <button onclick="addInput('9')">9</button>
-             <button onclick="addInput('-')">-</button>
+             <button class="num" onclick="addInput('7')">7</button>
+             <button class="num" onclick="addInput('8')">8</button>
+             <button class="num" onclick="addInput('9')">9</button>
+             <button class="operator" onclick="appendOperator('-')">-</button>
 
-             <button onclick="addInput('4')">4</button>
-             <button onclick="addInput('5')">5</button>
-             <button onclick="addInput('6')">6</button>
-             <button class="plus" onclick="addInput('+')">+</button>
+             <button class="num" onclick="addInput('4')">4</button>
+             <button class="num" onclick="addInput('5')">5</button>
+             <button class="num" onclick="addInput('6')">6</button>
+             <button class="operator" onclick="appendOperator('+')">+</button>
 
-             <button onclick="addInput('1')">1</button>
-             <button onclick="addInput('2')">2</button>
-             <button onclick="addInput('3')">3</button>
+             <button class="num" onclick="addInput('1')">1</button>
+             <button class="num" onclick="addInput('2')">2</button>
+             <button class="num" onclick="addInput('3')">3</button>
+             <button class="operator" onclick="appendOperator('%')">%</button>
+
             
              <button onclick="addInput('.')">.</button>
               <button onclick="addInput('0')">0</button>

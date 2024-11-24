@@ -4,8 +4,9 @@
     box-sizing: border-box;
 }
 
-/* :root{
-    /* --angle:  0deg; */
+*:focus{
+    outline: none;
+}
 
 
 
@@ -22,23 +23,24 @@
 body{
     display: flex;
     justify-content: center;
-    padding-top: 2em ;
-    height: 98vh;
+    padding: 1em ;
+    max-height: 99vh;
     background: url(./Assets/backgroun.jpg);
     z-index: -99;
     position: sticky;
 }
 
 #calculator{
-    width: 21em;
-    min-height: 37rem;
+    width: 20em;
+    min-height: 35rem;
+    max-height: 95vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     border: 2px solid black;
     border-radius: 1em;
-    background-color: black;
+    background-image: linear-gradient(180deg,#000000 30%, #0000009f, #000000ea);
     z-index: -2;
 
 }
@@ -51,6 +53,7 @@ body{
     width: 20rem;
     height: 11rem;
     font-family: dig7;
+    border-radius: 1rem;
 }
 
 #video{
@@ -62,14 +65,14 @@ body{
 #keys{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 6px;
+    gap: 7px;
     margin: 1.5rem 0;
 }
 
 button{
     color: rgb(71, 157, 231);
-    height: 3.9rem;
-    width : 3.9rem;
+    height: 3.5rem;
+    width : 3.7rem;
     border-radius: 1em;
     font-family: osiris;
     font-size: 1.3rem;
@@ -125,9 +128,7 @@ button:hover::after{
     }
 }
 
-.plus{
-    grid-row: span 2;
-    height: 100%;
+.operator{
     background: radial-gradient(circle at 1.8% 4.8%, #11173a 0%, #3a5594 90%);
 }
 
@@ -168,9 +169,13 @@ button:hover::after{
 
 .brand{
     width: 6rem;
-    height: 4rem;
+    height: 2rem;
+    background-image: linear-gradient(120deg, #3a559428 ,transparent);
+    border-radius: .5rem;
+    margin: .5rem;
 }
 
 .brand img{
     width: 100%;
+    height: 100%;
 }
